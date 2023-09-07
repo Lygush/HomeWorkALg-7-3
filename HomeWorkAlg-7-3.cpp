@@ -20,10 +20,11 @@ bool dfs(int** matrix, int i, int size, std::vector<int>& result, int& prev) {
                 }
             }
             else {
+                result.push_back(j);
                 prev = j;
-                if (result.size() == size - 1) {
-                    return false;
-                }
+                //if (result.size() == size - 1) {
+                //    return false;
+               // }
             }
         }
     }
@@ -44,7 +45,7 @@ int main() {
                 f_in >> matrix[i][j];
             }
         }
-        std::vector<int> result {0};
+        std::vector<int> result;
         bool cycle{};
         int prev{};
         for (int i{}; i < size; ++i) {
